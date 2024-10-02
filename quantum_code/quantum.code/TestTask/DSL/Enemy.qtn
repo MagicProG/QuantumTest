@@ -1,0 +1,18 @@
+﻿component Enemy
+{
+	int MaxHp;
+}
+
+// Events
+abstract event EnemyEvent {
+	entity_ref Enemy; 	
+}
+
+event OnEnemyTakeDamage : EnemyEvent {
+	FP Damage;
+	entity_ref Source; 	
+}
+
+synced event OnEnemyDeath : EnemyEvent {
+	entity_ref Killer; 	
+}
